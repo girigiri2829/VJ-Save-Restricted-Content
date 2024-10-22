@@ -151,7 +151,6 @@ def handle_private(message: pyrogram.types.messages_and_media.message.Message, c
 		if "Text" == msg_type:
 			bot.send_message(message.chat.id, msg.text, entities=msg.entities, reply_to_message_id=message.id)
 			return
-
 		smsg = bot.send_message(message.chat.id, '__Downloading__', reply_to_message_id=message.id)
 		dosta = threading.Thread(target=lambda:downstatus(f'{message.id}downstatus.txt',smsg),daemon=True)
 		dosta.start()
